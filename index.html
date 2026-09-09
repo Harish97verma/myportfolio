@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harish Kumar Verma | Backend Developer Portfolio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 6rem 0 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            background-color: var(--card-bg);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+        }
+
+        /* Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-purple);
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        /* Experience Timeline */
+        .experience-item {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-blue);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .experience-item h3 {
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-item .company {
+            color: var(--accent-purple);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer / Contact */
+        .contact-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-links a {
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">&lt;Harish.dev /&gt;</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#services">What I Do</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Harish Kumar Verma</h1>
+            <h2>Backend Developer</h2>
+            <p>Node.js | Express.js | RESTful APIs | MySQL | Third-Party Integrations</p>
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p>Backend Developer with hands-on experience building and scaling Node.js and Express.js applications[cite: 1, 2]. Specialized in designing RESTful API architectures, implementing third-party notification bots (Slack, Microsoft Teams, Twilio), and optimizing backend logic for high-capacity systems[cite: 1, 2]. Delivered real-time notification platforms supporting 10,000+ users with a strong focus on clean data contracts and SDLC best practices[cite: 1, 2].</p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-container">
+            <span class="skill-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span class="skill-tag"><i class="fa-database"></i> MySQL</span>
+            <span class="skill-tag">RESTful APIs</span>
+            <span class="skill-tag">JWT & OAuth</span>
+            <span class="skill-tag"><i class="fa-brands fa-slack"></i> Slack Integrations</span>
+            <span class="skill-tag"><i class="fa-solid fa-comment-dots"></i> Twilio</span>
+            <span class="skill-tag">Microsoft Teams Bots</span>
+            <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git / GitHub / GitLab / Bitbucket</span>
+            <span class="skill-tag">PHP / Java</span>
+            <span class="skill-tag">HTML / CSS / Bootstrap</span>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-item">
+            <h3>Node.js Developer</h3>
+            <div class="company">AROSYS / VYAKAR TECHNOLOGIES PVT. LTD. — LeadAngel (Product)</div>
+            <div class="date">July 2021 – June 2026</div>
+            <ul>
+                <li>Built and integrated Slack and Microsoft Teams bots for automated trigger-based notifications to 10,000+ users[cite: 1, 2].</li>
+                <li>Designed dynamic, reusable email templates for transactional messaging, standardizing output across platforms[cite: 1, 2].</li>
+                <li>Restructured RESTful API responses across 100+ endpoints to align with front-end UI data contracts[cite: 1, 2].</li>
+                <li>Implemented real-time lead notification workflows, drastically cutting lead response times for end users[cite: 1, 2].</li>
+                <li>Managed project tasks using OrangeScrum and maintained code repositories across GitLab and Bitbucket[cite: 1, 2].</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- What I Do -->
+    <section id="services" class="container">
+        <h2 class="section-title">What I Do</h2>
+        <div class="grid">
+            <div class="card">
+                <h3><i class="fa-solid fa-gears"></i> REST API Design</h3>
+                <p>Building clean, predictable, and scalable API endpoints for seamless front-end integration[cite: 1, 2].</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-bell"></i> Real-Time Notifications</h3>
+                <p>Integrating third-party messaging services (Slack, Twilio, Teams) and dynamic email workflows[cite: 1, 2].</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-database"></i> Database Architecture</h3>
+                <p>Designing relational schemas and optimizing query logic using MySQL[cite: 1, 2].</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-shield-halved"></i> Auth & Security</h3>
+                <p>Implementing security flows, JWT authorization, and OAuth access implementations[cite: 1, 2].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>LeadAngel Notification System</h3>
+                <p style="color: var(--text-muted); margin: 0.5rem 0 1rem;">Core backend engine handling real-time routing and bots across external integrations[cite: 1, 2].</p>
+                <div style="margin-bottom: 1rem;">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Slack API</span>
+                    <span class="skill-tag">MS Teams</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Employee Leave Management</h3>
+                <p style="color: var(--text-muted); margin: 0.5rem 0 1rem;">System tracking leave balances and automating deduction calculations for 500+ employees[cite: 1, 2].</p>
+                <div style="margin-bottom: 1rem;">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">MySQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-info">
+            <p>Interested in collaborating or discussing backend opportunities? Feel free to connect.</p>
+            <p style="margin-top: 0.5rem; color: var(--accent-blue);">harish97verma@gmail.com</p>
+            <div class="contact-links">
+                <a href="mailto:harish97verma@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/harish-verma-6a27a41b0" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Harish97verma" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Harish Kumar Verma. Built with HTML, CSS, & Vanilla JS.</p>
+    </footer>
+
+</body>
+</html>
