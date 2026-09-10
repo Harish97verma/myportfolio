@@ -55,6 +55,7 @@
             display: flex;
             list-style: none;
             gap: 1.5rem;
+            align-items: center;
         }
 
         .nav-links a {
@@ -117,6 +118,7 @@
             display: flex;
             gap: 1rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -125,6 +127,9 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-primary {
@@ -144,6 +149,17 @@
 
         .btn-secondary:hover {
             border-color: var(--accent-blue);
+        }
+
+        .btn-cv {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            color: white;
+            border: none;
+        }
+
+        .btn-cv:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
         /* Cards Grid */
@@ -266,6 +282,8 @@
             <li><a href="#services">What I Do</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
+            <!-- Navbar Download Button -->
+            <li><a href="https://drive.google.com/file/d/1VmD9hrnZ0FzuPRQC6wfEZkIKYr_19V-Y/view?usp=drive_link" target="_blank" class="btn btn-cv" style="padding: 0.4rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-download"></i> CV</a></li>
         </ul>
     </nav>
 
@@ -277,6 +295,8 @@
             <p>Node.js | Express.js | RESTful APIs | MySQL | Third-Party Integrations</p>
             <div class="btn-group">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
+                <!-- Hero Section CV Button -->
+                <a href="https://drive.google.com/file/d/1VmD9hrnZ0FzuPRQC6wfEZkIKYr_19V-Y/view?usp=drive_link" target="_blank" class="btn btn-cv"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
                 <a href="#contact" class="btn btn-secondary">Contact Me</a>
             </div>
         </div>
@@ -297,7 +317,7 @@
             <span class="skill-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
             <span class="skill-tag">Express.js</span>
             <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
-            <span class="skill-tag"><i class="fa-database"></i> MySQL</span>
+            <span class="skill-tag"><i class="fa-solid fa-database"></i> MySQL</span>
             <span class="skill-tag">RESTful APIs</span>
             <span class="skill-tag">JWT & OAuth</span>
             <span class="skill-tag"><i class="fa-brands fa-slack"></i> Slack Integrations</span>
